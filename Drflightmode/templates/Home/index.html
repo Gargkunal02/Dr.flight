@@ -144,7 +144,7 @@
       </div>
     </div>
 
-    <div class="site-section">
+    {% comment %} <div class="site-section">
       <div class="container">
         <div class="row">
           <div class="title-section text-center col-12">
@@ -172,7 +172,7 @@
 
           <div class="col-sm-6 col-lg-4 text-center item mb-4">
 
-            <a href="shop-single.html"> <img src="images/product_04.png" alt="Image"></a>
+            <a href="shop-single.html"> <img src="{% static 'Home/images/product_04.png' %}" alt="Image"></a>
             <h3 class="text-dark"><a href="shop-single.html">Cetyl Pure</a></h3>
             <p class="price"><del>45.00</del> &mdash; $20.00</p>
           </div>
@@ -194,7 +194,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> {% endcomment %}
 
     
     <div class="site-section bg-light">
@@ -208,13 +208,18 @@
           <div class="col-md-12 block-3 products-wrap">
             <div class="nonloop-block-3 owl-carousel">
 
+              {% for t in test %}
+              {% for x in type %}
               <div class="text-center item mb-4">
                 <a href="shop-single.html"> <img src="{% static 'Home/images/product_03.png' %}" alt="Image"></a>
-                <h3 class="text-dark"><a href="shop-single.html">Umcka Cold Care</a></h3>
-                <p class="price">$120.00</p>
+                <h3 class="text-dark"><a href="shop-single.html">{{t.testName}}</a></h3>
+                <p class="price">Rs {{t.price}}</p>
+                <h6>{{x.name}}</h6> 
+                <p>{{x.note}}</h6>
               </div>
-
-              <div class="text-center item mb-4">
+              {% endfor %}
+              {% endfor %}
+              {% comment %} <div class="text-center item mb-4">
                 <a href="shop-single.html"> <img src="{% static 'Home/images/product_01.png' %}" alt="Image"></a>
                 <h3 class="text-dark"><a href="shop-single.html">Umcka Cold Care</a></h3>
                 <p class="price">$120.00</p>
@@ -230,7 +235,7 @@
                 <a href="shop-single.html"> <img src="images/product_04.png" alt="Image"></a>
                 <h3 class="text-dark"><a href="shop-single.html">Umcka Cold Care</a></h3>
                 <p class="price">$120.00</p>
-              </div>
+              </div> {% endcomment %}
 
             </div>
           </div>
@@ -375,15 +380,15 @@
     </footer>
   </div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
+  <script src="{% static 'Home/js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'Home/js/jquery-ui.js' %}"></script>
+  <script src="{% static 'Home/js/popper.min.js' %}"></script>
+  <script src="{% static 'Home/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'Home/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'Home/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'Home/js/aos.js' %}"></script>
 
-  <script src="js/main.js"></script>
+  <script src="{% static 'Home/js/main.js' %}"></script>
 
 </body>
 

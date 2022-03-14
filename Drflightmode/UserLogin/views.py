@@ -1,13 +1,22 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
+from TestDetails.models import Plan, TestDetail, TestType
 
 from UserLogin.models import Doctor, Lab, Patient, User
 
 # Create your views here.
 
 def home(request):
-    return render(request,'Home/index.html')
+    test = TestDetail.objects.all()
+    type = TestType.objects.all()
+    plan = Plan.objects.all()
+    context = {
+        'test':test,
+        'type':type,
+        'plan':plan,
+    }
+    return render(request,'Home/index.html',context)
 
 def login_request(request):
     # return render(request,'Home/login.html')
