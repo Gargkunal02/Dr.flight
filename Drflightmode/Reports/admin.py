@@ -11,3 +11,4 @@ class Patientadmin(admin.ModelAdmin):
 
 admin.site.register(PatientTestDetail,Patientadmin)
 admin.site.register(OneTimeTest)
+admin.site.register(Report)

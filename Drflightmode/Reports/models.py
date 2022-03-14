@@ -22,3 +22,9 @@ class OneTimeTest(models.Model):
     
     # def __str__(self):
     #     return self.TestInput
+    
+class Report(models.Model):
+    onetimetest = models.ForeignKey(OneTimeTest, on_delete=models.CASCADE)
+    Ref_By = models.CharField(max_length=50)
+    Report_Status = models.CharField(max_length=50)
+    Ac_Status = models.CharField(max_length=50)

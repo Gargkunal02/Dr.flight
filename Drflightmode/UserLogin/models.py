@@ -1,3 +1,4 @@
+from platform import mac_ver
 from django.db import models
 
 # Create your models here.
@@ -14,6 +15,7 @@ class User(AbstractUser):
 class Lab(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     location = models.CharField(max_length=50)
+    lab_no = models.CharField(max_length=30,default='1221')
     # patient = models.ForeignKey(Patient,on_delete=models.CASCADE)
     # doctor = models.ManyToManyField(Doctor)
     # plan = models.ManyToManyField(Plan)
